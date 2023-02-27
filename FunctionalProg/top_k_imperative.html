@@ -1,0 +1,28 @@
+<html>
+  <script>
+    let k = 2;
+    let arr = [1, 3, 5, 7, 1, 3, 5, 1, 3, 3];
+    let groups = {};
+    for (let i = 0; i < arr.length; i++) {
+      let value = arr[i];
+      if (groups[value]) {
+        groups[value]++;
+      } else {
+        groups[value] = 1;
+      }
+    }
+    console.log("groups :", groups);
+
+    let groupsArr = Object.entries(groups);
+    console.log("groups arr :", groupsArr);
+
+    let sortGp = groupsArr.sort((a, b) => b[1] - a[1]);
+    console.log("sorted group :", sortGp);
+
+    let result = [];
+    for (let obj of sortGp) {
+      result.push(obj[0]);
+    }
+    console.log("result :", result);
+  </script>
+</html>

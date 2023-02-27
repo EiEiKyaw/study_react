@@ -1,0 +1,29 @@
+<html>
+  <script>
+    function factorial(n) {
+      console.log("Call factorial func");
+      let result = 1;
+      for (let i = 1; i <= n; i++) {
+        result *= i;
+      }
+      return result;
+    }
+    console.log("Fact(3) :", factorial(3));
+    console.log("Fact(3) :", factorial(3));
+
+    const memonize = (fn) => {
+      let lookUpTable = {};
+      return function (x) {
+        if (lookUpTable[x]) {
+          return lookUpTable[x];
+        } else {
+          lookUpTable[x] = fn(x);
+          return lookUpTable[x];
+        }
+      };
+    };
+    let newFac = memonize(factorial);
+    console.log("Fact of 3 :", newFac(3));
+    console.log("Fact of 3 :", newFac(3));
+  </script>
+</html>

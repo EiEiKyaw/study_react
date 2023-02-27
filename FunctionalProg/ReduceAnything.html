@@ -1,0 +1,21 @@
+<html>
+  <script>
+    let arr = [1, 2, 3, 4, 5];
+    const double = (x) => x * 2;
+
+    let result = arr.reduce((arr, ele) => {
+      return arr.concat(double(ele));
+    }, []);
+    console.log("Result :", result);
+
+    let isEven = (x) => x % 2 == 0;
+    let evenList = arr.reduce((arr, ele) => {
+      return isEven(ele) ? [...arr, ele] : arr;
+    }, []);
+    console.log("EvenList :", evenList);
+
+    let arr2 = [1, 2, 3];
+    let total = reduce(arr, (a, b) => a * b);
+    console.log("total :", total);
+  </script>
+</html>
