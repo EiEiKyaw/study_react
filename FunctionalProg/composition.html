@@ -1,0 +1,24 @@
+<html>
+  <script>
+    const toUpper = (str) => str.toUpperCase();
+    const appendHi = (str) => str + " hi";
+    const appendHiAndToUpper = (str) => toUpper(appendHi(str));
+
+    console.log("toUpper :", toUpper("hello"));
+    console.log("appendHi :", appendHi("hello"));
+    console.log("appendHiAndToUpper :", appendHiAndToUpper("hello"));
+
+    const compose = (f, g) => (x) => f(g(x));
+    /*
+    let result = g(x);
+    let result2 = f(result);
+    */
+    let newVersion = compose(toUpper, appendHi);
+    console.log("newVersion :", newVersion("hello"));
+
+    const addOne = (x) => x + 1;
+    const double = (x) => x * 2;
+    const addOneAndDouble = compose(double, addOne);
+    console.log("5 => +1 and *2 =>", addOneAndDouble(5));
+  </script>
+</html>
