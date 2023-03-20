@@ -98,7 +98,7 @@
         than unstrained yogurt, while preserving yogurt's distinctive sour taste. Like many types of yogurt, strained yogurt
         is often made from milk that has been enriched by boiling off some of its water content, or by adding extra butterfat
         and powdered milk. In Europe and North America, it is often made with low-fat or fat-free yogurt. In Iceland
-        a similar product named skyr is produced.
+        a similar product named <em>skyr</em> is produced.
       </p>
       <div class="read_on_wiki">
         <a
@@ -111,5 +111,15 @@
       <br />
       <button class="try_btn">Try Greek Yogurt</button>
     </div>
+    <script>
+      function sendReply(){
+        let name = prompt("What is your name?").trim();
+        let description = `Thanks, ${name}, we will be in touch. Meanwhile, have a lot of Yogurt!`;
+        alert(description);
+      }
+
+      let tryBtn = document.querySelector("button");
+      tryBtn.addEventListener("click", sendReply);
+    </script>
   </body>
 </html>
